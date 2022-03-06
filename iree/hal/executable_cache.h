@@ -98,6 +98,12 @@ typedef struct iree_hal_executable_params_t {
   // executable layout objects.
   iree_host_size_t executable_layout_count;
   iree_hal_executable_layout_t* const* executable_layouts;
+
+  // Executable-level specialization constants table.
+  // The compiler defines the contents of the table, how they are populated, and
+  // their usage in the executable.
+  iree_host_size_t constant_count;
+  const uint32_t* constants;
 } iree_hal_executable_params_t;
 
 // Initializes |out_executable_params| to the default values for normal
